@@ -1,0 +1,212 @@
+@font-face {
+    font-family: 'bearpawregular';
+    src: url('BEARPAW_-webfont.eot');
+    src: url('BEARPAW_-webfont.eot?#iefix') format('embedded-opentype'),
+         url('BEARPAW_-webfont.woff') format('woff'),
+         url('BEARPAW_-webfont.ttf') format('truetype'),
+         url('BEARPAW_-webfont.svg#bearpawregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'gooddogregular';
+    src: url('GoodDog-webfont.eot');
+    src: url('GoodDog-webfont.eot?#iefix') format('embedded-opentype'),
+         url('GoodDog-webfont.woff') format('woff'),
+         url('GoodDog-webfont.ttf') format('truetype'),
+         url('GoodDog-webfont.svg#gooddogregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+	background-color: #59666a;
+	width: 100%;
+	font-family: 'gooddogregular';
+}
+
+.container {
+	background-color: #DFDCC6;
+	width: 900px;
+	height: 500px;
+	margin: 120px auto;
+	position: relative;
+	border-radius: 5px;
+}
+.containerGP {
+	width: 850px;
+	height: 563px;
+	margin: auto;
+	margin-top: 100px;
+	position: relative;
+	border-radius: 5px;
+
+	}
+#bg {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+#textbox {
+	width: 650px;
+	margin: auto;
+	padding-top: 100px;
+}
+#textbox h1 { text-align: center; font-size: 40px;}
+#textbox p { 
+	margin: 0px 0px 0px 70px;
+	font-size: 20px;
+	line-height: 30px;
+}
+/*#swatterhp { display: none;}*/
+
+.images {position: absolute;}
+
+#flyLeft { top: 320px; left: 10px;}
+#flyRight { top: 20px; left: 750px;}
+#swatterhp { top: 230px; left: 650px;}
+#play { top: 350px; left: 500px;}
+#logo { top: -90px; left: 140px;}
+#logoGP {top: -80px; left: -100px;}
+
+footer {position: absolute; bottom: -20px; left: 10px;}
+
+#scoreFooter {
+	width: 430px;
+	height: 180px;
+	margin: auto;
+	position: absolute;
+	top: 550px;
+	left: 400px;
+}
+
+.button {
+	width: 150px;
+	color: white;
+	height: 50px;
+	background-color: #000;
+	text-align: center;
+	font-size: 40px;
+	position: absolute;
+	top: 650px; 
+	left: 105px;
+	z-index: 100000;
+}
+
+#again { left: 320px;}
+
+.box {
+	width: 75px;
+	height: 70px;
+	background-color: #000;
+	display: inline-block;
+	color: #fff;
+	font-size: 70px;
+	}
+
+#smashed {
+	display: inline-block;
+	text-align: center;
+	margin: 10px;
+	margin-left: 220px;
+	
+}
+#missed {
+	display: inline-block;
+	text-align: center;
+	margin: 10px;
+}
+
+/*GAME PARTS*/
+.flyBoard {
+	position: relative;
+	width: 850px;
+	height: 563px;
+	margin: auto;
+	border-radius: 5px;
+	overflow: hidden;
+	
+}
+.fly {
+	position: absolute;
+	top: 600px;
+	padding: 20px;
+	
+}
+
+.fly#one {}
+.fly#two {}
+.fly#three {}
+.fly#one {}
+
+#deadone {
+	position: absolute;
+	top: 20px;
+	left: 500px;
+	display: none;
+
+}
+#deadtwo {
+	position: absolute;
+	top: 80px;
+	left: 730px;
+	display: none;
+
+}
+#deadthree {
+	position: absolute;
+	top: 200px;
+	left: 280px;
+	display: none;
+
+}
+#deadfour {
+	position: absolute;
+	top: 70px;
+	left: 20px;
+	display: none;
+
+}
+
+#follower {
+	position: absolute;
+	width: 70px;
+	height: 130px;
+	position: absolute;
+}
+
+
+
+
+
+
+
+/*WIN EVENT*/
+
+#win {
+	position: absolute;
+	top: -800px;
+	left: -20px;
+	z-index: 100000;
+	width: 900px;
+	height: 900px;	
+}
+
+#df1 {
+	position: absolute;
+	top: -280px;
+	left: 530px;
+	z-index: 100000;	
+}
+#df2{
+	position: absolute;
+	top: -300px;
+	left: 20px;
+	z-index: 100000;	
+}
+
+#end {
+	display: none;
+}

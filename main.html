@@ -1,0 +1,221 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>House Of Flies:Mini Game</title>
+		<link rel="stylesheet" href="_css/style.css">
+		<link rel="stylesheet" href="_fonts/GoodDog-fontfacekit/web fonts/gooddog_regular_macroman/stylesheet.css" type="text/css" charset="utf-8" />
+	</head>
+	</head>
+	<body>
+		<div class="containerGP">
+		<img id="bg"src="_images/gamePage_bg.jpg" width="850" height="563">
+		<div id="end">
+			<img id="win" src="_images/Untitled-1.png" width="1440" height="1440">
+			<img id="df1" src="_images/dead_fly_01.png" width="300" height="300">
+			<img id="df2" src="_images/dead_fly_02.png" width="300" height="300">
+		</div>
+		<div class="flyBoard">
+			<img class="fly" id="one" src="_images/fly.png" width="100" height="100">
+			<img class="fly" id="two" src="_images/fly.png" width="100" height="100">
+			<img class="fly" id="three" src="_images/fly.png" width="100" height="100">
+			<img class="fly" id="four" src="_images/fly.png" width="100" height="100">
+
+			<img id="deadone" src="_images/flyRight.png" width="128" height="128">	
+			<img id="deadtwo" src="_images/flyRight.png" width="128" height="128">	
+			<img id="deadthree" src="_images/flyRight.png" width="128" height="128">	
+			<img id="deadfour" src="_images/flyRight.png" width="128" height="128">	
+			
+				<img id="follower" src="_images/swatter_01.png" >
+			
+		</div>
+			
+			<a href="index.html"><img class="images" id="logoGP" src="_images/header_gp.png" alt="House of Flys"></a>
+			<a href="index.html"><div class="button">Home</div></a>
+			<a href="main.html"><div id="again" class="button">Play Again</div></a>
+			<div id="scoreFooter">
+				<div id="smashed">
+					<h1>Smashed</h1>
+					<div class="box"><span id="score">0</span></div>
+				</div>
+			</div>
+		</div>
+		<script src="_js/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript">
+	$(document).ready(startGame);
+
+	function startGame(){ 
+		
+		frameRate    =  30;
+		timeInterval = Math.round( 1000 / frameRate );
+		relMouseX    = 0;
+		relMouseY    = 0;
+
+
+		var score = $('#score');
+		var x = 0;
+		var y = 0;
+
+		var deadFly = $(this).css({"opacity":"0"});
+
+
+
+		function winner(){
+				$('#end').show();
+				$('#win').animate({"top":"-200"}, 2000);
+				$('#df1').animate({"top":"300"}, 1000);
+				$('#df2').animate({"top":"300"}, 1500);
+				$('.fly').hide();
+				$('#dead').hide();
+		}
+
+		function deadAgainone(){
+			
+			$('#deadone').css({"opacity":"1"}).hide();
+			
+		}
+		function deadAgaintwo(){
+			$('#deadtwo').css({"opacity":"1"}).hide();
+			
+		}
+		function deadAgainthree(){
+			$('#deadthree').css({"opacity":"1"}).hide();
+			
+		}
+		function deadAgainfour(){
+			$('#deadfour').css({"opacity":"1"}).hide();
+			
+		}
+
+		function kill_fly_one(){
+			// var deadFly = $(this).css({"opacity":"0"});
+			$('.fly#one').css({"opacity":"0"});
+			$('#deadone').show().animate({"opacity":"0"}, 500, deadAgainone);
+			completeone();
+		}
+		function kill_fly_two(){
+			// var deadFly = $(this).css({"opacity":"0"});
+			$('.fly#two').css({"opacity":"0"});
+			$('#deadtwo').show().animate({"opacity":"0"}, 500, deadAgaintwo);
+			completetwo();
+		}
+		function kill_fly_three(){
+			// var deadFly = $(this).css({"opacity":"0"});
+			$('.fly#three').css({"opacity":"0"});
+			$('#deadthree').show().animate({"opacity":"0"}, 500, deadAgainthree);
+			completethree();
+		}
+		function kill_fly_four(){
+			// var deadFly = $(this).css({"opacity":"0"});
+			$('.fly#four').css({"opacity":"0"});
+			$('#deadfour').show().animate({"opacity":"0"}, 500, deadAgainfour);
+			completefour();
+		}
+
+		function completeone(){
+			x = x += 1;
+			score.html(x);
+			$('.fly#one').css({"top":"600px","left":"0px","opacity":"1"}).stop(true);
+			move_fly_one();
+			if (x > 9)
+			{
+				winner();
+			}
+		}
+		function completetwo(){
+			x = x += 1;
+			score.html(x);
+			$('.fly#two').css({"top":"600px","left":"0px","opacity":"1"}).stop(true);
+			move_fly_two();
+			if (x > 9)
+			{
+				winner();
+			}
+		}
+		function completethree(){
+			x = x += 1;
+			score.html(x);
+			$('.fly#three').css({"top":"600px","left":"0px","opacity":"1"}).stop(true);
+			move_fly_three();
+			if (x > 9)
+			{
+				winner();
+			}
+		}
+		function completefour(){
+			x = x += 1;
+			score.html(x);
+			$('.fly#four').css({"top":"600px","left":"0px","opacity":"1"}).stop(true);
+			move_fly_four();
+			if (x > 9)
+			{
+				winner();
+			}
+		}
+			function move_fly_one(){
+		$('.fly#one').animate({'top':'20px','left':'500px'}, 1000);}
+		
+	
+		function move_fly_two(){
+		$('.fly#two').animate({'top':'80px','left':'730px'}, 2000);}
+	
+	
+		function move_fly_three(){
+		$('.fly#three').animate({'top':'200px','left':'280px'}, 3000);}
+	
+	
+		function move_fly_four(){
+		$('.fly#four').animate({'top':'70px','left':'20px'}, 3000);}
+	
+		function move_fly(){
+		$('.fly#one').animate({'top':'20px','left':'500px'}, 1000);
+		$('.fly#two').animate({'top':'80px','left':'730px'}, 2000);
+		$('.fly#three').animate({'top':'200px','left':'280px'}, 3000);
+		$('.fly#four').animate({'top':'70px','left':'20px'}, 3000);
+	}			
+		
+		
+		
+			
+		$(document).mousemove( function(e) {
+			offset = $('.flyBoard').offset();
+			atimer = setInterval( animateFollower(), timeInterval ); 
+		  mouseX = e.pageX;
+		  mouseY = e.pageY;
+		  relMouseX = mouseX - offset.left;
+		  relMouseY = mouseY - offset.top;
+		    $('#mouse_x-trace').text( mouseX );
+			$('#mouse_y-trace').text( mouseY );
+			} );
+		function animateFollower() {
+		  $('#follower').css('left', relMouseX);
+		  $('#follower').css('top', relMouseY); 
+		}
+
+		function change_img(){
+			console.log('popoopoo');
+			$('img#follower').attr('src','_images/swatter_bent_03.png');
+		}
+		function change_back(){
+			$('img#follower').attr('src','_images/swatter_01.png');
+		}
+
+
+		$('.flyBoard').mousedown(change_img);
+		$('.flyBoard').mouseup(change_back);
+		$('.fly#one').click(kill_fly_one);
+		$('.fly#two').click(kill_fly_two);
+		$('.fly#three').click(kill_fly_three);
+		$('.fly#four').click(kill_fly_four);
+		move_fly();
+		
+
+	}
+
+
+
+
+
+		</script>
+	</body>
+</html>
